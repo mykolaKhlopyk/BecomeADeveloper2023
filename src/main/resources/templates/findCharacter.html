@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    <p><label for="area">Enter your text:</label></p>
+    <textarea id="area" name="textForAnalyze" rows="15" cols="70"></textarea>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+<div th:if="${result != null }">
+    <p th:text="${'Result: '+result?.toString()}"></p>
+</div>
+</body>
+</html>
