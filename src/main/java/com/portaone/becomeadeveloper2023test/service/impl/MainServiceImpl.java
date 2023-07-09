@@ -23,8 +23,8 @@ public class MainServiceImpl implements MainService {
     private Optional<Character> findFirstUnique(String word) {
         return findFirstEntryWithValueOne(word
                 .chars()
-                .boxed()
-                .collect(Collectors.groupingBy(c -> (char) c.intValue(), LinkedHashMap::new, Collectors.counting())));
+                .mapToObj(i->(char)i)
+                .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting())));
     }
 
     private Optional<Character> findFirstEntryWithValueOne(Map<Character, Long> characterCountMap) {
